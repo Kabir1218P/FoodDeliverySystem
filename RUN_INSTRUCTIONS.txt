@@ -1,0 +1,55 @@
+╔══════════════════════════════════════════════════════════════╗
+║         FOODEXPRESS - QUICK RUN INSTRUCTIONS                 ║
+╚══════════════════════════════════════════════════════════════╝
+
+METHOD 1: Automated Setup (Easiest)
+────────────────────────────────────
+./quick_start.sh
+
+Then:
+1. Edit .env file with your database credentials
+2. Set up database: createdb foodexpress
+3. Run: python run.py
+
+
+METHOD 2: Manual Setup
+───────────────────────
+
+Step 1: Activate Virtual Environment
+  source venv/bin/activate
+
+Step 2: Install Dependencies
+  pip install -r requirements.txt
+
+Step 3: Create .env File
+  cp .env.example .env
+  # Edit .env with your database credentials
+
+Step 4: Set Up Database
+  createdb foodexpress
+  psql -U your_user -d foodexpress -f schema.sql
+
+Step 5: Run Application
+  python run.py
+
+
+ACCESS THE APPLICATION
+──────────────────────
+• Home Page:    http://localhost:5000
+• Admin Panel:  http://localhost:5000/admin
+• API Base:     http://localhost:5000/api/v1
+
+
+TEST THE API
+────────────
+curl http://localhost:5000/api/v1/restaurants
+
+
+TROUBLESHOOTING
+───────────────
+• Database connection error? Check .env file
+• Module not found? Run: pip install -r requirements.txt
+• Port in use? Change port in run.py or kill process on port 5000
+
+
+For detailed instructions, see: HOW_TO_RUN.md

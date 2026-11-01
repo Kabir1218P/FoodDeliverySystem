@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Food Delivery Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #9c183d 0%, #a2794b 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        .feature-card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .api-endpoint {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-bag-heart"></i> FoodExpress
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Admin Panel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#api">API Documentation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">
+                <i class="bi bi-bag-heart"></i> FoodExpress
+            </h1>
+            <p class="lead mb-4">Complete Food Delivery Management System</p>
+            <div class="mt-4">
+                <a href="/admin" class="btn btn-light btn-lg me-3">
+                    <i class="bi bi-speedometer2"></i> Admin Dashboard
+                </a>
+                <a href="#api" class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-code-slash"></i> API Docs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-people fs-1 text-primary mb-3"></i>
+                            <h5 class="card-title">Customer Management</h5>
+                            <p class="card-text">Manage customer profiles, orders, and preferences</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-shop fs-1 text-success mb-3"></i>
+                            <h5 class="card-title">Restaurant Management</h5>
+                            <p class="card-text">Handle restaurant information and menu items</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-cart-check fs-1 text-warning mb-3"></i>
+                            <h5 class="card-title">Order Processing</h5>
+                            <p class="card-text">Complete order lifecycle management</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-truck fs-1 text-info mb-3"></i>
+                            <h5 class="card-title">Delivery Partners</h5>
+                            <p class="card-text">Track and manage delivery personnel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-credit-card fs-1 text-danger mb-3"></i>
+                            <h5 class="card-title">Payment Processing</h5>
+                            <p class="card-text">Handle payments and transactions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-graph-up fs-1 text-secondary mb-3"></i>
+                            <h5 class="card-title">Analytics & Reports</h5>
+                            <p class="card-text">View insights and generate reports</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Documentation Section -->
+    <section id="api" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">API Documentation</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Base URL: <code>/api/v1</code></h4>
+                    
+                    <h5 class="mt-4">Customers</h5>
+                    <div class="api-endpoint">
+                        <strong>GET</strong> /customers - List all customers<br>
+                        <strong>POST</strong> /customers - Create a new customer<br>
+                        <strong>GET</strong> /customers/{id} - Get customer details<br>
+                        <strong>PUT</strong> /customers/{id} - Update customer<br>
+                        <strong>DELETE</strong> /customers/{id} - Delete customer
+                    </div>
+
+                    <h5 class="mt-4">Restaurants</h5>
+                    <div class="api-endpoint">
+                        <strong>GET</strong> /restaurants - List all restaurants<br>
+                        <strong>POST</strong> /restaurants - Create a new restaurant<br>
+                        <strong>GET</strong> /restaurants/{id} - Get restaurant details<br>
+                        <strong>PUT</strong> /restaurants/{id} - Update restaurant<br>
+                        <strong>DELETE</strong> /restaurants/{id} - Delete restaurant
+                    </div>
+
+                    <h5 class="mt-4">Menu Items</h5>
+                    <div class="api-endpoint">
+                        <strong>GET</strong> /menu-items - List all menu items<br>
+                        <strong>POST</strong> /menu-items - Create a new menu item<br>
+                        <strong>GET</strong> /menu-items/{id} - Get menu item details<br>
+                        <strong>PUT</strong> /menu-items/{id} - Update menu item<br>
+                        <strong>DELETE</strong> /menu-items/{id} - Delete menu item
+                    </div>
+
+                    <h5 class="mt-4">Orders</h5>
+                    <div class="api-endpoint">
+                        <strong>GET</strong> /orders - List all orders<br>
+                        <strong>POST</strong> /orders - Create a new order<br>
+                        <strong>GET</strong> /orders/{id} - Get order details<br>
+                        <strong>PUT</strong> /orders/{id}/status - Update order status
+                    </div>
+
+                    <h5 class="mt-4">Delivery Partners</h5>
+                    <div class="api-endpoint">
+                        <strong>GET</strong> /delivery-partners - List all delivery partners<br>
+                        <strong>POST</strong> /delivery-partners - Create a new delivery partner<br>
+                        <strong>GET</strong> /delivery-partners/{id} - Get delivery partner details<br>
+                        <strong>PUT</strong> /delivery-partners/{id} - Update delivery partner<br>
+                        <strong>DELETE</strong> /delivery-partners/{id} - Delete delivery partner
+                    </div>
+
+                    <h5 class="mt-4">Payments</h5>
+                    <div class="api-endpoint">
+                        <strong>GET</strong> /payments - List all payments<br>
+                        <strong>POST</strong> /payments - Create a new payment<br>
+                        <strong>GET</strong> /payments/{id} - Get payment details<br>
+                        <strong>PUT</strong> /payments/{id} - Update payment
+                    </div>
+
+                    <div class="alert alert-info mt-4">
+                        <h6>Query Parameters:</h6>
+                        <ul>
+                            <li><code>page</code> - Page number for pagination</li>
+                            <li><code>per_page</code> - Items per page (default: 20)</li>
+                            <li><code>include_items</code> - Include related items (true/false)</li>
+                            <li><code>include_menu</code> - Include menu items for restaurants</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 FoodExpress. All rights reserved.</p>
+            <p class="mb-0">Built with Flask, SQLAlchemy, and PostgreSQL</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
